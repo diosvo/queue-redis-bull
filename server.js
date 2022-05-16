@@ -2,7 +2,9 @@ const express = require("express");
 const { PORT } = require("./config");
 const cors = require("cors");
 const app = express();
+require("./redis");
 
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use((_, response, next) => {
   response.header("Access-Control-Allow-Origin", "*");
@@ -13,7 +15,7 @@ app.use((_, response, next) => {
   next();
 });
 
-app.get("/", (_, response) => {
+app.get("/", async (_, response) => {
   response.sendFile("index.html", { root: __dirname });
 });
 
@@ -25,6 +27,4 @@ const photosRoute = require("./routes/photos");
 
 app.use("/photos", photosRoute);
 
-app.listen(PORT, () => {
-  console.log(`Listening at http://localhost:${PORT}`);
-});
+app.listen(PORT, () => console.log(`Listening at http://localhost:${PORT}`));
