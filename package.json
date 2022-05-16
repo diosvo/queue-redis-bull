@@ -1,0 +1,23 @@
+{
+  "name": "queue-redis-bull",
+  "version": "1.0.0",
+  "description": "demo queue",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diosvo/queue-redis-bull.git"
+  },
+  "author": "diosvo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diosvo/queue-redis-bull/issues"
+  },
+  "homepage": "https://github.com/diosvo/queue-redis-bull#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
