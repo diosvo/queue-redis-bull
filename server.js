@@ -5,6 +5,7 @@ const app = express();
 require("./redis");
 
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(cors());
 app.use((_, response, next) => {
   response.header("Access-Control-Allow-Origin", "*");
