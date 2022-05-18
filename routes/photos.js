@@ -1,23 +1,35 @@
 const express = require("express");
 const router = express.Router();
 const axios = require("axios");
-const { ENDPOINT } = require("../config");
+const { ENDPOINT, DEFAULT_EXPIRATION } = require("../config");
 const client = require("../redis");
-const util = require("util");
 
 const slug = "photos";
-client.get = util.promisify(client.get);
+const redisKey = "photo";
 
-router.get("/", async (request, response) => {
+router.get("/", async (_, response) => {
+  const cache = await client.get(`${slug}`);
+
+  if (cache) {
+    return response.json(JSON.parse(cache));
+  }
+
   const { data } = await axios.get(`${ENDPOINT}/${slug}`);
+  client.setEx(`${slug}`, DEFAULT_EXPIRATION, JSON.stringify(data));
+
   return response.json(data);
 });
 
 router.get("/:id", async (request, response) => {
-  const albumId = request.query.albumId;
-  const { data } = await axios.get(`${ENDPOINT}/${slug}/${albumId}`, {
-    params: { albumId },
-  });
+  const { id } = request.params;
+  const cache = await client.get(`${redisKey}-${id}`);
+
+  if (cache) {
+    return response.json(JSON.parse(cache));
+  }
+
+  const { data } = await axios.get(`${ENDPOINT}/${slug}/${id}`);
+  client.setEx(`${redisKey}-${id}`, DEFAULT_EXPIRATION, JSON.stringify(data));
 
   return response.json(data);
 });
