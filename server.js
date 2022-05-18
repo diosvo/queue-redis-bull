@@ -2,7 +2,6 @@ const express = require("express");
 const { PORT } = require("./config");
 const cors = require("cors");
 const app = express();
-require("./redis");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
