@@ -17,15 +17,17 @@
   },
   "homepage": "https://github.com/diosvo/queue-redis-bull#readme",
   "dependencies": {
-    "@bull-board/ui": "^3.11.0",
-    "axios": "^0.27.2",
-    "body-parser": "^1.20.0",
     "bull": "^4.8.3",
-    "cors": "^2.8.5",
     "express": "^4.18.1",
     "redis": "^4.1.0"
   },
   "devDependencies": {
+    "@bull-board/api": "^3.11.0",
+    "@bull-board/express": "^3.11.0",
+    "@bull-board/ui": "^3.11.0",
+    "axios": "^0.27.2",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "node-mailer": "^0.1.1",
     "nodemon": "^2.0.16"

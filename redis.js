@@ -6,6 +6,7 @@ const {
   REDIS_PORT,
   REDIS_USERNAME,
   REDIS_PASSWORD,
+  DEFAULT_EXPIRATION,
 } = require("./config");
 
 /* Connect to Redis Cloud */
@@ -26,6 +27,10 @@ function queue(slug) {
       password: REDIS_PASSWORD,
       host: REDIS_URI,
       port: REDIS_PORT,
+    },
+    limiter: {
+      max: 1000,
+      duration: DEFAULT_EXPIRATION,
     },
   });
 }

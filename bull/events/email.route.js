@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { send_email } = require("../queues/email.queue");
+const { send_email, adapter } = require("../queues/email.queue");
 
 router.post("/send", async (request, response) => {
   const { message, ...rest } = request.body;
@@ -10,5 +10,7 @@ router.post("/send", async (request, response) => {
   });
   response.send("OK");
 });
+
+router.use("/admin/queues", adapter.getRouter());
 
 module.exports = router;
