@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const axios = require("axios");
 const { ENDPOINT, DEFAULT_EXPIRATION } = require("../config");
-const client = require("../redis");
+const { client } = require("../redis");
 
 const slug = "photos";
 const redisKey = "photo";
