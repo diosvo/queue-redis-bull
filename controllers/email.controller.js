@@ -1,3 +1,5 @@
+const { send_email } = require("../queues/email.queue");
+
 const controller = {
   send: async (request, response) => {
     const { message, ...rest } = request.body;

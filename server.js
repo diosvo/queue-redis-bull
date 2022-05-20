@@ -24,7 +24,7 @@ app.get("/", async (_, response) => {
 /* declared routes */
 
 const photosRoute = require("./routes/photos.route");
-const emailRoute = require("./bull/events/email.route");
+const emailRoute = require("./routes/email.route");
 
 /* use those api now !! */
 

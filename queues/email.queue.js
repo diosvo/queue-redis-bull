@@ -1,4 +1,4 @@
-const { queue } = require("../../redis");
+const { queue } = require("../redis");
 const email_process = require("../processes/email.process");
 const { BullAdapter } = require("@bull-board/api/bullAdapter");
 const { ExpressAdapter } = require("@bull-board/express");

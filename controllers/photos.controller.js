@@ -1,11 +1,12 @@
 const { client } = require("../redis");
+const { ENDPOINT, DEFAULT_EXPIRATION } = require("../config");
 const axios = require("axios");
 
 const slug = "photos";
 const redisKey = "photo";
 
 const controller = {
-  all: async (_, response, _) => {
+  all: async (_, response) => {
     const cache = await client.get(`${slug}`);
 
     if (cache) {
