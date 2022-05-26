@@ -1,6 +1,14 @@
-### Step
+### STEP BY STEP
 
-1. open terminal, run: npm start
-2. on Windows OS, open virtual machine or Ubuntu, run command line to connect to Redis Lab (skip this step if we already open Redis Insight). It's connected successfully only when the log shows "::> Redis Client Connected"
-3. open Redis Insight to follow queues/ key-value pairs change.
-4. open browser and enter http://localhost:3000/email/admin/queues to see Bull Dashboard (Jobs Lifecycle)
+1. on Windows OS:
+
+- connect to localhost:
+  - remove params of `createClient` method in `redis.js` file.
+  - open Virtual Machine or Ubuntu, run `redis-server`
+  - open project's terminal, run `npm start`.
+- connect to Redis Lab: run `npm start`.
+
+  It's connected successfully only when the log shows "::> Redis Client Connected".
+
+2. Open **Redis Insight** to see queues/ key-value pairs change.
+3. Open [**Bull Dashboard**](http://localhost:3000/email/admin/queues) to see jobs lifecycle
