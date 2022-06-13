@@ -3,6 +3,8 @@ const { PORT } = require("./config");
 const cors = require("cors");
 const app = express();
 const bodyParser = require("body-parser");
+const swaggerUI = require("swagger-ui-express");
+const swaggerJSON = require("./swagger.json");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -31,4 +33,5 @@ const emailRoute = require("./routes/email.route");
 app.use("/email", emailRoute);
 app.use("/photos", photosRoute);
 
+app.use("/api", swaggerUI.serve, swaggerUI.setup(swaggerJSON));
 app.listen(PORT, () => console.log(`Listening at http://localhost:${PORT}`));

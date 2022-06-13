@@ -17,6 +17,9 @@ email_queue.process(email_process);
 const send_email = (data) => {
   email_queue.add(data, {
     attempts: 2,
+    repeat: {
+      cron: "*/2 * * * * *",
+    },
   });
 };
 
