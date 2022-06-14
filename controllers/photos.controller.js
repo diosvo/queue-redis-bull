@@ -6,14 +6,17 @@ const slug = "photos";
 const redisKey = "photo";
 
 const controller = {
-  all: async (_, response) => {
+  all: async (request, response) => {
+    const { _limit } = request;
     const cache = await client.get(`${slug}`);
 
     if (cache) {
       return response.json(JSON.parse(cache));
     }
 
-    const { data } = await axios.get(`${ENDPOINT}/${slug}`);
+    const { data } = await axios.get(
+      `${ENDPOINT}/${slug}?_limit=${_limit ?? 1}`
+    );
     client.setEx(`${slug}`, DEFAULT_EXPIRATION, JSON.stringify(data));
 
     return response.json(data);
