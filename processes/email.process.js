@@ -1,4 +1,4 @@
-import nodemailer from "nodemailer";
+const nodemailer = require("nodemailer");
 
 const email_process = async (job) => {
   const testAccount = await nodemailer.createTestAccount();

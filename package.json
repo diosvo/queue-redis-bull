@@ -2,8 +2,7 @@
   "name": "queue-redis-bull",
   "version": "1.0.0",
   "description": "demo queue",
-  "main": "server.js",
-  "type": "module",
+  "main": "index.js",
   "scripts": {
     "start": "nodemon server.js",
     "test": "nyc --reporter=lcov --reporter=text mocha tests/*.js --exit"

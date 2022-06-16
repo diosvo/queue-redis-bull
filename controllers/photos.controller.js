@@ -1,6 +1,6 @@
-import axios from "axios";
-import { DEFAULT_EXPIRATION, ENDPOINT } from "../config";
-import { client } from "../redis";
+const { client } = require("../redis");
+const { ENDPOINT, DEFAULT_EXPIRATION } = require("../config");
+const axios = require("axios");
 
 const slug = "photos";
 const URL = `${ENDPOINT}/${slug}`;
