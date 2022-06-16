@@ -32,16 +32,43 @@
         ],
         "parameters": [
           {
+            "name": "_start",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "default": 0
+          },
+          {
             "name": "_limit",
             "in": "query",
             "required": false,
-            "type": "integer"
+            "type": "integer",
+            "default": 10
+          },
+          {
+            "name": "_sort",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "_order",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "nullable": true
           },
           {
             "name": "albumId",
             "in": "query",
             "required": false,
-            "type": "integer"
+            "type": "integer",
+            "nullable": true
           }
         ],
         "responses": {
