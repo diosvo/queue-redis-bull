@@ -1,10 +1,10 @@
-const express = require("express");
-const { PORT } = require("./config");
-const cors = require("cors");
+import bodyParser from "body-parser";
+import cors from "cors";
+import express from "express";
+import swaggerUI from "swagger-ui-express";
+import { PORT } from "./config";
+import swaggerJSON from "./swagger.json";
 const app = express();
-const bodyParser = require("body-parser");
-const swaggerUI = require("swagger-ui-express");
-const swaggerJSON = require("./swagger.json");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

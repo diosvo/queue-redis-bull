@@ -1,8 +1,8 @@
-const { queue } = require("../redis");
-const email_process = require("../processes/email.process");
-const { BullAdapter } = require("@bull-board/api/bullAdapter");
-const { ExpressAdapter } = require("@bull-board/express");
-const { createBullBoard } = require("@bull-board/api");
+import { createBullBoard } from "@bull-board/api";
+import { BullAdapter } from "@bull-board/api/bullAdapter";
+import { ExpressAdapter } from "@bull-board/express";
+import email_process from "../processes/email.process";
+import { queue } from "../redis";
 
 const adapter = new ExpressAdapter();
 const email_queue = queue("email");

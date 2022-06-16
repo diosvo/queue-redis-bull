@@ -1,4 +1,4 @@
-const { send_email } = require("../queues/email.queue");
+import { send_email } from "../queues/email.queue";
 
 const controller = {
   send: async (request, response) => {

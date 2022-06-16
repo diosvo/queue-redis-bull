@@ -1,21 +1,20 @@
-const assert = require("assert");
-const { client } = require("../redis");
-const { expect, sinon } = require("./helpers");
-const controller = require("../controllers/photos.controller");
+import { client }  from "../redis";
+import { expect, sinon }  from "../utils/helpers";
+import controller  from "../controllers/photos.controller";
 
 describe("should test photos controller", () => {
   describe("should retrieve the list of photos", () => {
-    beforeEach(() => {
-      sinon.spy(client, "setEx");
-    });
-
-    it("should cache the data at the first call", async () => {
+    it("should cache the data at the first call", () => {
+      const spy = sinon.spy(client, "setEx");
       const request = {
         params: {
           id: 1,
         },
       };
-      const { data } = await controller.byId(request);
+      controller.byId(request).then((response) => {
+        expect(response).to.equal({});
+      });
+      expect(spy.calledOnce).to.be.true;
     });
   });
 });

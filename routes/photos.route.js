@@ -1,5 +1,5 @@
-const router = require("express").Router();
-const controller = require("../controllers/photos.controller");
+import { router} from '../utils/helpers'
+import controller from "../controllers/photos.controller";
 
 router
   .get("/", controller.all)

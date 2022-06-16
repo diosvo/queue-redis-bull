@@ -1,6 +1,6 @@
-const router = require("express").Router();
-const { adapter } = require("../queues/email.queue");
-const controller = require("../controllers/email.controller");
+import controller from "../controllers/email.controller";
+import { adapter } from "../queues/email.queue";
+import { router } from "../utils/helpers";
 
 router.post("/send", controller.send).use("/admin/queues", adapter.getRouter());
 

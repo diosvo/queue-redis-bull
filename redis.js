@@ -11,9 +11,7 @@ const {
 
 /* Connect to Redis Cloud */
 
-const client = createClient({
-  url: `redis://${REDIS_USERNAME}:${REDIS_PASSWORD}@${REDIS_URI}:${REDIS_PORT}`,
-});
+const client = createClient();
 client.connect();
 client.on("connect", () => console.log("::> Redis Client Connected"));
 client.on("error", (error) => console.log("<::", error));
