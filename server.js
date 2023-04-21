@@ -33,5 +33,5 @@ const emailRoute = require("./routes/email.route");
 app.use("/email", emailRoute);
 app.use("/photos", photosRoute);
 
-app.use("/api", swaggerUI.serve, swaggerUI.setup(swaggerJSON));
+app.use("/swagger-docs", swaggerUI.serve, swaggerUI.setup(swaggerJSON));
 app.listen(PORT, () => console.log(`[server] http://localhost:${PORT}`));
