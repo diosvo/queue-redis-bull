@@ -12,11 +12,11 @@ const {
 /* Connect to Redis Cloud */
 
 const client = createClient({
-  url: `redis://${REDIS_USERNAME}:${REDIS_PASSWORD}@${REDIS_URI}:${REDIS_PORT}`,
+  url: `redis://${REDIS_URI}:${REDIS_PORT}`,
 });
 client.connect();
-client.on("connect", () => console.log("::> Redis Client Connected"));
-client.on("error", (error) => console.log("<::", error));
+client.on("connect", () => console.log("[redis] connected"));
+client.on("error", (error) => console.log("[redis]", error));
 
 /* Connect to Queue */
 

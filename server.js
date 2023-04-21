@@ -34,4 +34,4 @@ app.use("/email", emailRoute);
 app.use("/photos", photosRoute);
 
 app.use("/api", swaggerUI.serve, swaggerUI.setup(swaggerJSON));
-app.listen(PORT, () => console.log(`Listening at http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`[server] http://localhost:${PORT}`));
