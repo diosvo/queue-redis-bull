@@ -34,4 +34,4 @@ app.use("/email", emailRoute);
 app.use("/photos", photosRoute);
 
 app.use("/swagger-docs", swaggerUI.serve, swaggerUI.setup(swaggerJSON));
-app.listen(PORT, () => console.log(`[server] http://localhost:${PORT}`));
+app.listen(PORT, () => console.log("\x1b[35m%s\x1b[0m", "[server]", `http://localhost:${PORT}`));

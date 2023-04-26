@@ -1,6 +1,8 @@
 const Queue = require("bull");
 const { createClient } = require("redis");
 
+const FgRed = "\x1b[31m%s\x1b[0m";
+
 const {
   REDIS_URI,
   REDIS_PORT,
@@ -15,8 +17,8 @@ const client = createClient({
   url: `redis://${REDIS_URI}:${REDIS_PORT}`,
 });
 client.connect();
-client.on("connect", () => console.log("[redis] connected"));
-client.on("error", (error) => console.log("[redis]", error));
+client.on("connect", () => console.log(FgRed, "[redis]", "connected"));
+client.on("error", (error) => console.log(FgRed, `[redis]: ${error}`));
 
 /* Connect to Queue */
 
