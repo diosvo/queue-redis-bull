@@ -14,8 +14,8 @@ It's connected successfully only when the log shows "[redis] connected".
 
 ### Dashboard
 
-| View           | URL                         | Note                           |
-| -------------- | --------------------------- | ------------------------------ |
-| Redis          | RedisInsight application    | queues/ key-value pairs change |
-| Bull Dashboard | {{host}}/email/admin/queues | jobs lifecycle                 |
-| Swagger Docs   | {{host}}/swagger-docs/      | APIs development               |
+| View           | URL                        | Note                           |
+| -------------- | -------------------------- | ------------------------------ |
+| Redis          | RedisInsight application   | queues/ key-value pairs change |
+| Bull Dashboard | {{host}}/email/queue/email | jobs lifecycle                 |
+| Swagger Docs   | {{host}}/swagger-docs/     | APIs development               |
