@@ -33,7 +33,7 @@
     "type": "git",
     "url": "git+https://github.com/diosvo/queue-redis-bull.git"
   },
-  "author": "diosvo",
+  "author": "Dios Vo",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/diosvo/queue-redis-bull/issues"
@@ -53,6 +53,7 @@
     "chai": "^4.3.7",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
+    "express-validator": "^7.0.1",
     "mocha": "^10.2.0",
     "node-mailer": "^0.1.1",
     "nodemon": "^2.0.22",
