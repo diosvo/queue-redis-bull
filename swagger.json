@@ -156,6 +156,40 @@
           }
         }
       }
+    },
+    "/email/send": {
+      "post": {
+        "tags": [
+          "email"
+        ],
+        "summary": "Send an email",
+        "description": "Returns a status code",
+        "operationId": "send-an-email",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Email"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Email"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
     }
   },
   "securityDefinitions": {
@@ -166,6 +200,33 @@
     }
   },
   "definitions": {
+    "Email": {
+      "type": "object",
+      "required": [
+        "from",
+        "to",
+        "subject",
+        "text",
+        "message"
+      ],
+      "properties": {
+        "from": {
+          "type": "string"
+        },
+        "to": {
+          "type": "string"
+        },
+        "subject": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
     "Photo": {
       "type": "object",
       "required": [
