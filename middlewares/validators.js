@@ -5,16 +5,15 @@ const { validationResult } = require('express-validator');
  * @description sequential processing, stops running validations chain if the previous one fails.
  * it can be reused by many routes
  */
-const validate = validations => async (req, res, next) => {
-  const message = (errors) => res.status(422).json({ errors });
+const validate = validations => async (request, response, next) => {
+  const message = (errors) => response.status(422).json({ message: 'validation failed', errors });
 
   if (Array.isArray(validations)) {
     for (const validation of validations) {
-      const result = await validation.run(req);
-      if (result.errors.length) break;
+      await validation.run(request);
     }
 
-    const errors = validationResult(req);
+    const errors = validationResult(request);
     if (errors.isEmpty()) {
       return next();
     }
