@@ -6,8 +6,8 @@
 
 - connect to localhost:
   - remove params of `createClient` method in `redis.js` file.
-  - open Virtual Machine or Ubuntu, `redis-server`
-  - open project's terminal, `npm start`
+  - open Virtual Machine or Ubuntu: `redis-server`
+  - open project's terminal: `npm start`
 - connect to Redis Lab: `npm start`
 
 It's connected successfully only when the log shows "[redis] connected".
@@ -16,6 +16,6 @@ It's connected successfully only when the log shows "[redis] connected".
 
 | View           | URL                        | Note                           |
 | -------------- | -------------------------- | ------------------------------ |
+| Swagger Docs   | {{host}}/                  | APIs development               |
 | Redis          | RedisInsight application   | queues/ key-value pairs change |
 | Bull Dashboard | {{host}}/email/queue/email | jobs lifecycle                 |
-| Swagger Docs   | {{host}}/swagger-docs/     | APIs development               |

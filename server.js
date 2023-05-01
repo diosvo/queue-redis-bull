@@ -19,9 +19,7 @@ app.use((_, response, next) => {
   next();
 });
 
-app.get("/", async (_, response) => {
-  response.sendFile("index.html", { root: __dirname });
-});
+app.use("/", swaggerUI.serve, swaggerUI.setup(swaggerJSON));
 
 /* declared routes */
 
@@ -33,5 +31,4 @@ const emailRoute = require("./routes/email.route");
 app.use("/email", emailRoute);
 app.use("/photos", photosRoute);
 
-app.use("/swagger-docs", swaggerUI.serve, swaggerUI.setup(swaggerJSON));
 app.listen(PORT, () => console.log("\x1b[35m%s\x1b[0m", "[server]", `http://localhost:${PORT}`));

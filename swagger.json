@@ -16,6 +16,10 @@
     {
       "name": "photos",
       "description": "Photo information"
+    },
+    {
+      "name": "email",
+      "description": "Nodemailer using job queue and redis"
     }
   ],
   "paths": {
