@@ -5,8 +5,7 @@ const BgRed = '\x1b[41m%s\x1b[0m';
 const PREFIX = '[queue]';
 
 const handlerCompleted = (job) => {
-  console.info(BgGreen, PREFIX, `job in ${job.queue.name} completed for ${job.data.message}`);
-  job.remove();
+  console.info(BgGreen, PREFIX, `job in ${job.queue.name} completed for ${job.id}`);
 }
 
 const handlerFailure = (job, error) => {

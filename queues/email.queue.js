@@ -19,7 +19,6 @@ email_queue.process(email_process);
 const send_email = (data) => {
   email_queue.add(data, {
     attempts: QUEUE_ATTEMPTS,
-    removeOnComplete: QUEUE_REMOVE_ON_COMPLETE,
     removeOnFail: QUEUE_REMOVE_ON_FAIL,
   });
 };

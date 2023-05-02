@@ -1,4 +1,4 @@
-### Set up
+### 🛠️ Set up
 
 1. `yarn install`
 
@@ -12,10 +12,19 @@
 
 It's connected successfully only when the log shows "[redis] connected".
 
-### Dashboard
+### 📚 Documentations
 
-| View           | URL                        | Note                           |
-| -------------- | -------------------------- | ------------------------------ |
-| Redis          | RedisInsight application   | queues/ key-value pairs change |
-| Bull Dashboard | {{host}}/email/queue/email | jobs lifecycle                 |
-| Swagger Docs   | {{host}}/swagger-docs/     | APIs development               |
+| Name                                                                      | Note |
+| ------------------------------------------------------------------------- | ---- |
+| 🐗 bullmq                                                                 |      |
+| [docs.io](https://docs.bullmq.io/)                                        |      |
+| [reference](https://github.com/OptimalBits/bull/blob/master/REFERENCE.md) |      |
+| 🚩 redis                                                                  |      |
+
+### 📊 Dashboard
+
+| View              | URL                          | Note                           |
+| ----------------- | ---------------------------- | ------------------------------ |
+| 🚩 Redis          | RedisInsight application     | queues/ key-value pairs change |
+| 🐗 Bull Dashboard | `{{host}}/email/queue/email` | jobs lifecycle                 |
+| 📄 Swagger Docs   | `{{host}}/swagger-docs/`     | APIs development               |
